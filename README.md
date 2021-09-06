@@ -1,8 +1,8 @@
-## edit config.toml on your two nodes for listening from the internet and restart service
+### edit config.toml on your two nodes for listening from the internet and restart service
 
 change laddr = "tcp://127.0.0.1:26657" to laddr = "tcp://0.0.0.0:26657"
 
-## download and install go
+### download and install go
 
 
 wget https://golang.org/dl/go1.17.linux-amd64.tar.gz
@@ -10,7 +10,7 @@ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 go version
 
-## download and install relayer
+### download and install relayer
 
 git clone https://github.com/cosmos/relayer.git
 cd relayer
@@ -20,12 +20,12 @@ make install
 echo 'export PATH=$PATH:/root/go/bin' >> ~/.bashrc
 source ~/.bashrc
 
-## Initialize the relayer's configuration.
+### Initialize the relayer's configuration.
 
 rly config init
 
 
-## add config kichain
+### add config kichain
 
 cd $HOME/relayer/configs
 nano ki_config.json
@@ -40,7 +40,7 @@ nano ki_config.json
 }
 
 
-add config rizon
+### add config rizon
 
 nano riz_config.json
 
@@ -58,37 +58,37 @@ nano riz_config.json
 rly chains add -f ki_config.json
 rly chains add -f riz_config.json
 
-## Either import or create new keys for the relayer to use when signing and relaying transactions
+### Either import or create new keys for the relayer to use when signing and relaying transactions
 
 
 rly keys restore kichain-t-4 kif "your mnemonic"
 
 rly keys restore groot-011 rizon "your mnemonic"
 
-## Assign the relayer chain-specific keys created or imported above to the specific chain's configuration. Note, key from step
+### Assign the relayer chain-specific keys created or imported above to the specific chain's configuration. Note, key from step
 
 rly chains edit kichain-t-4 key kif
 rly chains edit groot-011 key rizon
 
-## Ensure both relayer accounts are funded by querying each.
+### Ensure both relayer accounts are funded by querying each.
 
 rly q balance kichain-t-4
 rly q balance groot-011
 
 
-## Now we are ready to initialize the light clients on each network. The relayer will used the configured RPC endpoints from each network to fetch header information and initialize the light clients.
+### Now we are ready to initialize the light clients on each network. The relayer will used the configured RPC endpoints from each network to fetch header information and initialize the light clients.
 
 rly light init kichain-t-4 -f
 
 rly light init groot-011 -f
 
-## Next, we generate a new path representing a client, connection, channel and a specific port between the two networks.
+### Next, we generate a new path representing a client, connection, channel and a specific port between the two networks.
 
 rly paths generate kichain-t-4 groot-011 ibc --port=transfer
 
 rly paths show ibc--yaml    to see details
 
-## Open config relayer
+### Open config relayer
 
 nano ~/.relayer/config/config.yaml
 
@@ -116,7 +116,7 @@ paths:
     strategy:
       type: naive
 
-## run rly
+### run rly
 
 rly start ibc
 
