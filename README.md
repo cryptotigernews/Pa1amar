@@ -122,17 +122,21 @@ rly start ibc
 
 
 rizond tx ibc-transfer transfer transfer channel-18 tki15h774756q3zxzv46y7k69t2prd6sam9muh4sqy "1000000uatolo" --from rizon --chain-id=groot-011 --fees="25uatolo" --gas=auto
+
 2ED825F8731D819B382F3057E7D7142549A6828DC95E2E05458FD7EF01A51889
 https://testnet.mintscan.io/rizon/txs/2ED825F8731D819B382F3057E7D7142549A6828DC95E2E05458FD7EF01A51889
 
 kid tx ibc-transfer transfer transfer channel-56 rizon1h9s2gq7sslfn8k3836s35ve4m6kmr70l8f6vlk 1000000utki --from kif --fees=5000utki --gas=auto --chain-id kichain-t-4 --home $HOME/kif/kid
+
 7AF3D215B964AA1EC3E9F35E00FAD045B229EB6CD30B22AFF0A56888433B26A3
 https://api-challenge.blockchain.ki/txs/7AF3D215B964AA1EC3E9F35E00FAD045B229EB6CD30B22AFF0A56888433B26A3
 
 
 root@vps2160503:~/relayer/configs# rly tx transfer groot-011 kichain-t-4  1000000uatolo $(rly chains address kichain-t-4)
+
 I[2021-09-06|19:14:29.799] ✔ [groot-011]@{419227} - msg(0:transfer) hash(CFD863755F210D4BDBAE5655112E6B0E9310B5AC0ECFD0D1532105884F64531D)
 
 
 rly tx transfer kichain-t-4 groot-011 1000000utki $(rly chains address groot-011)
+
 I[2021-09-06|19:14:01.786] ✔ [kichain-t-4]@{221200} - msg(0:transfer) hash(DE2B48A986C298DC90ADF5830E8B8624CF92BA998BFEFFF9F29A6C7876728170)
