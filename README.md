@@ -73,8 +73,8 @@ Usage:
   rly keys add [chain-id] [[name]] [flags]
   ```
 ```
-rly keys add kichain-t-4
-rly keys add groot-011
+rly keys add kichain-t-4 kif
+rly keys add groot-011 rizon
 ```
 
 or restore key
