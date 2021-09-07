@@ -120,8 +120,8 @@ rly light init groot-011 -f
 ```
 rly paths generate kichain-t-4 groot-011 ibc --port=transfer
 
-rly paths show ibc--yaml    to see details
-```
+rly paths show ibc--yaml ```   to see details
+
 ### Open config relayer
 ```
 nano ~/.relayer/config/config.yaml
