@@ -176,6 +176,10 @@ systemctl daemon-reload
 systemctl enable rlyd
 systemctl start rlyd
 ```
+### To check the logs of a relay, use:
+```
+journalctl -u rlyd -f
+```
 
 ### we conduct a transaction
 ```
