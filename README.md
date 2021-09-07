@@ -59,13 +59,29 @@ nano riz_config.json
   "trusting-period": "48h"
 }
 ```
-
+```
+Usage:
+  rly chains add [flags]
+```
 ```
 rly chains add -f ki_config.json
 rly chains add -f riz_config.json
 ```
 ### Either import or create new keys for the relayer to use when signing and relaying transactions
+```
+Usage:
+  rly keys add [chain-id] [[name]] [flags]
+  ```
+```
+rly keys add kichain-t-4
+rly keys add groot-011
+```
 
+or restore key
+```
+Usage:
+  rly keys restore [chain-id] [name] [mnemonic] [flags]
+```
 ```
 rly keys restore kichain-t-4 kif "your mnemonic"
 rly keys restore groot-011 rizon "your mnemonic"
