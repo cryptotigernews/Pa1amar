@@ -5,13 +5,15 @@ change laddr = "tcp://127.0.0.1:26657" to laddr = "tcp://0.0.0.0:26657"
 ### download and install go
 
 
+```
 wget https://golang.org/dl/go1.17.linux-amd64.tar.gz
 rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 go version
+```
 
 ### download and install relayer
-
+```
 git clone https://github.com/cosmos/relayer.git
 cd relayer
 git checkout v0.9.3
@@ -19,11 +21,11 @@ make install
 
 echo 'export PATH=$PATH:/root/go/bin' >> ~/.bashrc
 source ~/.bashrc
-
+```
 ### Initialize the relayer's configuration.
-
+```
 rly config init
-
+```
 
 ### add config kichain
 
