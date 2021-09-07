@@ -183,6 +183,7 @@ journalctl -u rlyd -f
 
 ### we conduct a transaction
 ```
+Usage:
 rly transact transfer [src-chain-id] [dst-chain-id] [amount] [dst-addr] [flags]
 ```
 in my case, the command looks like this
@@ -199,6 +200,7 @@ I[2021-09-06|19:14:01.786] ✔ [kichain-t-4]@{221200} - msg(0:transfer) hash(DE2
 
 ### go to the rizon server and run the command
 ```
+Usage:
 rizond tx ibc-transfer transfer [src-port] [src-channel] [receiver] [amount] [flags]
 ```
 
@@ -215,6 +217,7 @@ https://testnet.mintscan.io/rizon/txs/2ED825F8731D819B382F3057E7D7142549A6828DC9
 ### go to the kichain server and run the command
 
 ```
+Usage:
 kid tx ibc-transfer transfer [src-port] [src-channel] [receiver] [amount] [flags]
 ```
 in my case, the command looks like this
