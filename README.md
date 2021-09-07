@@ -1,6 +1,6 @@
 ### edit config.toml on your two nodes for listening from the internet and restart service
 
-change laddr = "tcp://127.0.0.1:26657" to laddr = "tcp://0.0.0.0:26657"
+change ```laddr = "tcp://127.0.0.1:26657"``` to ```laddr = "tcp://0.0.0.0:26657"```
 
 ### download and install go
 
