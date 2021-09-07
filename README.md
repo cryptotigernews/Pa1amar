@@ -2,6 +2,9 @@
 
 change ```laddr = "tcp://127.0.0.1:26657"``` to ```laddr = "tcp://0.0.0.0:26657"```
 
+
+Go to the server with the relayer
+
 ### download and install go
 
 
