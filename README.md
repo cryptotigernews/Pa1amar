@@ -28,7 +28,7 @@ rly config init
 ```
 
 ### add config kichain
-
+```
 cd $HOME/relayer/configs
 nano ki_config.json
 
@@ -40,10 +40,10 @@ nano ki_config.json
   "gas-prices": "0.025utki",
   "trusting-period": "48h"
 }
-
+```
 
 ### add config rizon
-
+```
 nano riz_config.json
 
 
@@ -55,48 +55,49 @@ nano riz_config.json
   "gas-prices": "0.025uatolo",
   "trusting-period": "48h"
 }
+```
 
-
+```
 rly chains add -f ki_config.json
 rly chains add -f riz_config.json
-
+```
 ### Either import or create new keys for the relayer to use when signing and relaying transactions
 
-
+```
 rly keys restore kichain-t-4 kif "your mnemonic"
 
 rly keys restore groot-011 rizon "your mnemonic"
-
+```
 ### Assign the relayer chain-specific keys created or imported above to the specific chain's configuration. Note, key from step
-
+```
 rly chains edit kichain-t-4 key kif
 rly chains edit groot-011 key rizon
-
+```
 ### Ensure both relayer accounts are funded by querying each.
-
+```
 rly q balance kichain-t-4
 rly q balance groot-011
-
+```
 
 ### Now we are ready to initialize the light clients on each network. The relayer will used the configured RPC endpoints from each network to fetch header information and initialize the light clients.
-
+```
 rly light init kichain-t-4 -f
 
 rly light init groot-011 -f
-
+```
 ### Next, we generate a new path representing a client, connection, channel and a specific port between the two networks.
-
+```
 rly paths generate kichain-t-4 groot-011 ibc --port=transfer
 
 rly paths show ibc--yaml    to see details
-
+```
 ### Open config relayer
-
+```
 nano ~/.relayer/config/config.yaml
-
+```
 
 ### change section paths,add connection-id and channel-id
-
+```
 paths:
   ibc:
     src:
@@ -117,11 +118,11 @@ paths:
       version: ics20-1
     strategy:
       type: naive
-
+```
 ### run rly
-
+```
 rly start ibc
-
+```
 
 rizond tx ibc-transfer transfer transfer channel-18 tki15h774756q3zxzv46y7k69t2prd6sam9muh4sqy "1000000uatolo" --from rizon --chain-id=groot-011 --fees="25uatolo" --gas=auto
 
