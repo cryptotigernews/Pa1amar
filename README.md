@@ -88,16 +88,30 @@ rly keys restore groot-011 rizon "your mnemonic"
 ```
 ### Assign the relayer chain-specific keys created or imported above to the specific chain's configuration. Note, key from step
 ```
+Usage:
+  rly chains edit [chain-id] [key] [value] [flags]
+```
+
+```
 rly chains edit kichain-t-4 key kif
 rly chains edit groot-011 key rizon
 ```
 ### Ensure both relayer accounts are funded by querying each.
+```
+Usage:
+  rly query balance [chain-id] [[key-name]] [flags]
+```
 ```
 rly q balance kichain-t-4
 rly q balance groot-011
 ```
 
 ### Now we are ready to initialize the light clients on each network. The relayer will used the configured RPC endpoints from each network to fetch header information and initialize the light clients.
+```
+Usage:
+  rly light init [chain-id] [flags]
+```
+
 ```
 rly light init kichain-t-4 -f
 rly light init groot-011 -f
