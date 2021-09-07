@@ -169,7 +169,10 @@ in my case, the command looks like this
 ```
 rizond tx ibc-transfer transfer transfer channel-18 tki15h774756q3zxzv46y7k69t2prd6sam9muh4sqy "1000000uatolo" --from rizon --chain-id=groot-011 --fees="25uatolo" --gas=auto
 ```
+HASH
+```
 2ED825F8731D819B382F3057E7D7142549A6828DC95E2E05458FD7EF01A51889
+```
 https://testnet.mintscan.io/rizon/txs/2ED825F8731D819B382F3057E7D7142549A6828DC95E2E05458FD7EF01A51889
 
 ### go to the kichain server and run the command
@@ -181,5 +184,8 @@ in my case, the command looks like this
 ```
 kid tx ibc-transfer transfer transfer channel-56 rizon1h9s2gq7sslfn8k3836s35ve4m6kmr70l8f6vlk 1000000utki --from kif --fees=5000utki --gas=auto --chain-id kichain-t-4 --home $HOME/kif/kid
 ```
+HASH
+```
 7AF3D215B964AA1EC3E9F35E00FAD045B229EB6CD30B22AFF0A56888433B26A3
+```
 https://api-challenge.blockchain.ki/txs/7AF3D215B964AA1EC3E9F35E00FAD045B229EB6CD30B22AFF0A56888433B26A3
