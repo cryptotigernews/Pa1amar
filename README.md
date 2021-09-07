@@ -121,7 +121,7 @@ paths:
 ```
 rly start ibc
 ```
-### if all ok,greate service
+### if all ok,greate and run service
 
 ```
 tee /etc/systemd/system/rlyd.service > /dev/null <<EOF
